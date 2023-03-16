@@ -13,6 +13,7 @@
         <locationY>200</locationY>
         <actionName>ClaseDesdeProcess_cls</actionName>
         <actionType>apex</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <processMetadataValues>
                 <name>dataType</name>
@@ -57,22 +58,6 @@
         </inputParameters>
     </actionCalls>
     <apiVersion>49.0</apiVersion>
-    <assignments>
-        <name>myVariable_waitStartTimeAssignment</name>
-        <label>myVariable_waitStartTimeAssignment</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-        <assignmentItems>
-            <assignToReference>myVariable_waitStartTimeVariable</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>$Flow.CurrentDateTime</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>myDecision</targetReference>
-        </connector>
-    </assignments>
     <decisions>
         <processMetadataValues>
             <name>index</name>
@@ -113,7 +98,7 @@
         <dataType>Boolean</dataType>
         <expression>ISCHANGED( {!myVariable_current.Description})</expression>
     </formulas>
-    <interviewLabel>LlamarClase-1_InterviewLabel</interviewLabel>
+    <interviewLabel>LlamarClase-2_InterviewLabel</interviewLabel>
     <label>LlamarClase</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -140,7 +125,7 @@
         </value>
     </processMetadataValues>
     <processType>Workflow</processType>
-    <startElementReference>myVariable_waitStartTimeAssignment</startElementReference>
+    <startElementReference>myDecision</startElementReference>
     <status>Active</status>
     <variables>
         <name>myVariable_current</name>
@@ -157,15 +142,5 @@
         <isInput>true</isInput>
         <isOutput>false</isOutput>
         <objectType>Account</objectType>
-    </variables>
-    <variables>
-        <name>myVariable_waitStartTimeVariable</name>
-        <dataType>DateTime</dataType>
-        <isCollection>false</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-        <value>
-            <elementReference>$Flow.CurrentDateTime</elementReference>
-        </value>
     </variables>
 </Flow>

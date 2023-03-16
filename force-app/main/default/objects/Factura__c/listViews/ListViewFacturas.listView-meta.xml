@@ -4,6 +4,8 @@
     <columns>NAME</columns>
     <columns>Total_Factura__c</columns>
     <columns>Estado__c</columns>
-    <filterScope>Mine</filterScope>
+    <columns>Descripcion__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
     <label>ListViewFacturas</label>
 </ListView>
